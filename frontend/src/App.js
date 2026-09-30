@@ -4,6 +4,7 @@ import "@/AppEnhancements.css";
 import "@/AppPolish.css";
 import "@/AppUltra.css";
 import "@/AppGlobe.css";
+import "@/AppFilm.css";
 import { ArrowUpRight, ChevronDown, ChevronRight, CircleDot, Factory, Gauge, Globe2, Menu, Network, Phone, RadioTower, Ship, ShieldCheck, Sparkles, X, Zap } from "lucide-react";
 import { Toaster, toast } from "sonner";
 
@@ -95,7 +96,7 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false); const [modal, setModal] = useState(false); const [active, setActive] = useState(0); const [scrolled, setScrolled] = useState(false); const [selectedStudy, setSelectedStudy] = useState(null); const [selectedRelationship, setSelectedRelationship] = useState(null);
   usePageAnchors();
   useEffect(() => { const fn = () => setScrolled(window.scrollY > 30); window.addEventListener("scroll", fn); return () => window.removeEventListener("scroll", fn); }, []);
-  useEffect(() => { const art = document.querySelector(".hero-art"); if (!art || art.querySelector(".hero-film")) return; const video = document.createElement("video"); video.className = "hero-film"; video.src = "https://videos.pexels.com/video-files/853800/853800-hd_1920_1080_30fps.mp4"; video.poster = "https://images.unsplash.com/photo-1611581372056-30cf28a7bd2e?crop=entropy&cs=srgb&fm=jpg&q=70"; video.muted = true; video.loop = true; video.autoplay = true; video.playsInline = true; video.setAttribute("aria-hidden", "true"); art.prepend(video); return () => video.remove(); }, []);
+  useEffect(() => { const art = document.querySelector(".hero-art"); if (!art || art.querySelector(".hero-film")) return; const film = document.createElement("div"); film.className = "hero-film"; film.setAttribute("aria-hidden", "true"); art.prepend(film); return () => film.remove(); }, []);
   const openContact = () => { setModal(true); setMenuOpen(false); };
   const openStudy = (study) => setSelectedStudy(study);
   const openRelationship = (relationship) => setSelectedRelationship(relationship);
