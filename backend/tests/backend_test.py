@@ -39,8 +39,8 @@ def test_contact_validation(api_client):
         f"{BASE_URL}/api/contact",
         json={"name": "TEST_invalid", "email": "not-an-email", "message": "x"},
     )
-    # The current schema validates presence/types; email-format validation is worth checking explicitly.
-    assert response.status_code in (200, 422)
+    # EmailStr must reject malformed addresses at the API boundary.
+    assert response.status_code == 422
 
 
 def test_status_create_and_list(api_client):

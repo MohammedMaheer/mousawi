@@ -42,7 +42,8 @@ function ContactModal({ onClose }) {
     e.preventDefault(); setSending(true);
     const form = new FormData(e.currentTarget);
     try {
-      await fetch(`${API}/contact`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(Object.fromEntries(form)) });
+      const response = await fetch(`${API}/contact`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(Object.fromEntries(form)) });
+      if (!response.ok) throw new Error("Contact request failed");
       setSent(true); toast.success("Thank you — our team will be in touch shortly.");
     } catch { toast.error("We could not send your message. Please call our Abu Dhabi office."); }
     setSending(false);
