@@ -1,0 +1,3 @@
+.hero .button-ghost{color:#fff;border-color:#7794bb;background:rgba(6,26,56,.22)}.hero .button-ghost:hover{color:#fff;border-color:var(--cyan);background:rgba(70,220,229,.12)}
+.hero-art:before{opacity:.13;inset:auto -5% -10% 26%;height:43%;mask-image:linear-gradient(to bottom,transparent 0%,#000 35%,#000 100%);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 35%,#000 100%)}
+.brand img{width:122px;height:50px;padding:3px 6px}

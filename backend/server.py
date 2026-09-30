@@ -5,7 +5,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
 from pathlib import Path
-from pydantic import BaseModel, Field, ConfigDict
+from pydantic import BaseModel, Field, ConfigDict, EmailStr
 from typing import List
 import uuid
 from datetime import datetime, timezone
@@ -39,7 +39,7 @@ class StatusCheckCreate(BaseModel):
 
 class ContactInquiry(BaseModel):
     name: str
-    email: str
+    email: EmailStr
     company: str = ""
     message: str
 

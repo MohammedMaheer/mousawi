@@ -1,10 +1,19 @@
 import { useEffect, useState } from "react";
 import "@/AppFixed.css";
+import "@/AppEnhancements.css";
+import "@/AppPolish.css";
 import { ArrowUpRight, ChevronDown, ChevronRight, CircleDot, Factory, Gauge, Globe2, Menu, Network, Phone, RadioTower, Ship, ShieldCheck, Sparkles, X, Zap } from "lucide-react";
 import { Toaster, toast } from "sonner";
 
 const logo = "https://customer-assets-m6fa6gv7.emergentagent.net/job_028edafd-ffa7-4ae9-a87d-519452bf15ee/artifacts/muv89ecq_image.png";
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+
+function usePageAnchors() {
+  useEffect(() => {
+    document.querySelector(".partners")?.setAttribute("id", "partners");
+    document.querySelector("footer")?.setAttribute("id", "careers");
+  }, []);
+}
 
 const industries = [
   { name: "Oil & Gas", icon: Gauge, copy: "Systems built for demanding upstream and downstream environments." },
@@ -48,6 +57,7 @@ function ContactModal({ onClose }) {
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false); const [modal, setModal] = useState(false); const [active, setActive] = useState(0); const [scrolled, setScrolled] = useState(false);
+  usePageAnchors();
   useEffect(() => { const fn = () => setScrolled(window.scrollY > 30); window.addEventListener("scroll", fn); return () => window.removeEventListener("scroll", fn); }, []);
   const openContact = () => { setModal(true); setMenuOpen(false); };
   return <div className="site" id="top"><Toaster position="top-right" richColors />
