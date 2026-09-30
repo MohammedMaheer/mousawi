@@ -19,6 +19,9 @@ Design and build a premium, innovative, client-facing homepage for Almousawi Tra
 - Larger typography scale across navigation, body copy, industry cards, capability details, project cards, and footer.
 - Verified client showcase using official marks sourced from Almousawi's public client page, with category labels and hover color reveal.
 - Three immersive case-study modals with sourced imagery, outcomes, systems involved, close controls, and contact CTA handoff.
+- Current-site relationship panels for ADNOC, TotalEnergies, Borouge, Dubai Airports, and Petrofac with category context, support explanation, and official source links.
+- Scroll-linked case-study stage diagrams with desktop and mobile scroll depth, animated rings, stage activation, and engineering lifecycle storytelling.
+- Premium density/motion pass with tighter section rhythm, technical overlays, 3D perspective hover motion, orbit animations, animated grids, project affordances, and layered section surfaces.
 
 ## Prioritized backlog
 - P0: None.
