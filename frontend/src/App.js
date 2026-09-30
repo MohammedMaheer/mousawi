@@ -5,6 +5,7 @@ import "@/AppPolish.css";
 import "@/AppUltra.css";
 import "@/AppGlobe.css";
 import "@/AppFilm.css";
+import "@/AppCaseFix.css";
 import { ArrowUpRight, ChevronDown, ChevronRight, CircleDot, Factory, Gauge, Globe2, Menu, Network, Phone, RadioTower, Ship, ShieldCheck, Sparkles, X, Zap } from "lucide-react";
 import { Toaster, toast } from "sonner";
 

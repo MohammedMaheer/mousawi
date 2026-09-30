@@ -1,0 +1,41 @@
+{
+  "summary": "Completed iteration 8 backend regression and desktop/mobile UI testing. Hero film layer, coverage globe and all four sector updates passed with no blocked media requests or page console errors. One case-study scroll-stage regression remains: the modal only exposes stages 1–3.",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [
+      {
+        "flow": "Scroll-linked case study stages",
+        "issue": "Case-study modal scroll range is capped at 195px (scrollHeight 1037px, clientHeight 842px), so stage 4–7 cannot be reached; scrollTop 285–1000 clamps to 195 and the UI remains at stage 03.",
+        "affected_selectors": [".case-study-panel", ".story-stage", "[data-testid=case-study-card-1]"]
+      }
+    ],
+    "design_issues": []
+  },
+  "test_report_links": [
+    "/app/backend/tests/backend_test.py",
+    "/app/test_reports/pytest/pytest_results_iteration8.xml"
+  ],
+  "action_items": [
+    "Adjust case-study modal layout/scroll behavior so all seven story stages are reachable and stage 07 appears at the bottom of the panel."
+  ],
+  "critical_code_review_comments": [
+    "The stage calculation supports seven stages, but the modal's max-height/desktop sticky layout leaves only 195px of scrollable range, making four stages functionally inaccessible."
+  ],
+  "updated_files": [
+    "/app/test_reports/iteration_8.json",
+    "/app/test_reports/pytest/pytest_results_iteration8.xml"
+  ],
+  "success_rate": {
+    "backend": "100%",
+    "frontend": "94%"
+  },
+  "seed_data_creation": "Created TEST-prefixed contact inquiries and status records through the public regression suite; no seeded production data was modified.",
+  "retest_needed": true,
+  "should_call_test_agent_after_fix": true,
+  "context_for_next_testing_agent": "Verified desktop/mobile load, no horizontal overflow at 390px, hero-film CSS layer without video element, coverage globe routes/UAE/global labels, all four sector status updates, anchors, capability tabs, relationship panel, contact success, mobile nav, and no blocked hero/image media requests. Re-test case-study stages after modal scroll/layout fix.",
+  "rca of the issue": "The case-study onScroll handler maps scrollTop in 95px increments, but .case-study-panel has max-height: 78vh and its grid/sticky image layout leaves only 195px of actual scroll range at 1920x1080. Therefore the maximum computed stage is floor(195/95)=2, displayed as stage 03, and stages 04–07 are unreachable."
+}
