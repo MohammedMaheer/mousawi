@@ -1,0 +1,66 @@
+{
+  "app_type": "marketing_site",
+  "brand_name": "Almousawi Trading Co. LLC",
+  "established": "1974",
+  "headquarters": "Addax Tower, Al Reem Island, Abu Dhabi, UAE",
+  "phone": "+971 2 627 1203",
+  "email": "mosawe@almosawe.ae",
+  "typography": {
+    "headings": "Chivo / Cabinet Grotesk",
+    "body": "Inter / IBM Plex Sans"
+  },
+  "colors": {
+    "primary": "#0A192F",
+    "accent": "#C5A880",
+    "secondary": "#1E293B",
+    "background": "#070D1B",
+    "surface": "#0F1E36",
+    "text_light": "#F8FAFC",
+    "text_muted": "#94A3B8"
+  },
+  "visual_enhancers": {
+    "glassmorphism": "backdrop-blur-xl bg-[#070D1B]/80 border border-white/10",
+    "tracing_beam": "glow border border-[#C5A880]/30 shadow-[0_0_20px_rgba(197,168,128,0.15)]",
+    "noise_texture": true
+  },
+  "component_path": "/app/frontend/src/App.js",
+  "grids": {
+    "hero_grid": "grid grid-cols-1 lg:grid-cols-12 gap-8 items-center",
+    "bento_grid": "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6",
+    "ecosystem_grid": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+  },
+  "motion": {
+    "entrance": "framer-motion fade-in slide-up",
+    "hover": "transition-all duration-300 hover:-translate-y-1 hover:border-[#C5A880]"
+  },
+  "accessibility": {
+    "contrast_ratio": "WCAG AA compliant (minimum 4.5:1 for normal text)",
+    "focus_states": "focus:ring-2 focus:ring-[#C5A880] focus:outline-none",
+    "data_testids": "Mandatory on all interactive elements"
+  },
+  "image_urls": [
+    {
+      "category": "hero_refinery",
+      "url": "https://images.unsplash.com/photo-1611581372056-30cf28a7bd2e?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "description": "Industrial refinery plant under clear sky"
+    },
+    {
+      "category": "control_room",
+      "url": "https://images.unsplash.com/photo-1782945217386-300f33f22069?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "description": "Advanced engineering control room consoles"
+    },
+    {
+      "category": "industrial_pipes",
+      "url": "https://images.unsplash.com/photo-1588011930968-eadac80e6a5a?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "description": "Heavy machinery and industrial process towers"
+    }
+  ],
+  "instructions_to_main_agent": "Build a stunning, highly polished single-page homepage for Almousawi Trading Co. LLC with anchored sections: Hero, Heritage (1974 timeline), Industries, Interactive Capabilities (Heat Transfer, Switchboards, Sealing & Valves, Well Integrity), Engineering Ecosystem, Credibility Metrics, Featured Projects, Technology Partners (CG Emotron, etc.), Contact Modal & Form, and Responsive Floating Header.",
+  "universal_guidelines_for_main_agent": [
+    "Never use generic templates or center-everything disease.",
+    "Ensure all interactive elements have data-testid attributes.",
+    "Use gorgeous industrial dark mode palette (#070D1B background, #C5A880 warm gold accent, #F8FAFC text).",
+    "Include Sonner for toast notifications on contact form submission.",
+    "Use Lucide React and Phosphor icons for professional engineering touch."
+  ]
+}
