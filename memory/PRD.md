@@ -22,6 +22,8 @@ Design and build a premium, innovative, client-facing homepage for Almousawi Tra
 - Current-site relationship panels for ADNOC, TotalEnergies, Borouge, Dubai Airports, and Petrofac with category context, support explanation, and official source links.
 - Scroll-linked case-study stage diagrams with desktop and mobile scroll depth, animated rings, stage activation, and engineering lifecycle storytelling.
 - Premium density/motion pass with tighter section rhythm, technical overlays, 3D perspective hover motion, orbit animations, animated grids, project affordances, and layered section surfaces.
+- Animated UAE-to-global coverage section with sector switching for Oil & Gas, Marine, Power, and Industrial, plus globe routes, HQ node, global supplier network label, and current-site service context.
+- Hero film-style engineering layer built as a reliable CSS motion treatment over sourced industrial imagery after the external MP4 host returned 403; no broken media requests remain.
 
 ## Prioritized backlog
 - P0: None.
