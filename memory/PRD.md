@@ -16,9 +16,12 @@ Design and build a premium, innovative, client-facing homepage for Almousawi Tra
 - Heritage timeline, industry rail, interactive capability tabs, seven-stage engineering ecosystem visualization, projects, partners, CTA, and detailed footer.
 - Contact modal with valid/invalid submission handling, success state, error toast, and responsive form.
 - Responsive layout verified at desktop and 390px mobile widths with no horizontal overflow.
+- Larger typography scale across navigation, body copy, industry cards, capability details, project cards, and footer.
+- Verified client showcase using official marks sourced from Almousawi's public client page, with category labels and hover color reveal.
+- Three immersive case-study modals with sourced imagery, outcomes, systems involved, close controls, and contact CTA handoff.
 
 ## Prioritized backlog
 - P0: None.
 - P1: Connect enquiry notifications to the company email workflow.
 - P1: Replace prototype project imagery and partner wordmarks with approved company assets.
-- P2: Add dedicated case-study detail pages behind the project cards.
+- P2: Add dedicated URL-based case-study detail pages behind the current immersive modal views.
