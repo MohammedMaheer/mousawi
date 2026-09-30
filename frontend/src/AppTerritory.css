@@ -1,0 +1,110 @@
+/* Almousawi — premium ecosystem redesign + interactive verified territory coverage */
+
+/* --- Ecosystem: dense, icon-led connected flow with supporting imagery --- */
+.ecosystem{padding:110px 0 105px;position:relative;overflow:hidden}
+.ecosystem:before{content:"";position:absolute;inset:0;opacity:.13;background-image:linear-gradient(rgba(83,219,224,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(83,219,224,.12) 1px,transparent 1px);background-size:78px 78px;mask-image:linear-gradient(180deg,transparent,#000 22%,#000 72%,transparent)}
+.ecosystem-layout{position:relative;display:grid;grid-template-columns:.82fr 1.18fr;gap:70px;align-items:start}
+.ecosystem-intro{position:sticky;top:112px}
+.ecosystem-intro .eyebrow{color:#9eb1c9}
+.ecosystem-intro h2{color:#fff}
+.ecosystem-intro h2 em{color:var(--cyan)}
+.ecosystem-lead{color:#aebed0;font-size:16px;line-height:1.85;max-width:420px;margin:24px 0 34px}
+.ecosystem-image{position:relative;border:1px solid rgba(83,219,224,.28);max-width:440px}
+.ecosystem-image img{display:block;width:100%;height:235px;object-fit:cover;filter:saturate(.75) contrast(1.06)}
+.ecosystem-image:after{content:"";position:absolute;inset:0;background:linear-gradient(165deg,rgba(35,77,191,.32),rgba(6,20,44,.72))}
+.ecosystem-image-tag{position:absolute;left:18px;bottom:15px;z-index:1;display:flex;flex-direction:column;gap:4px;font:10px var(--mono);letter-spacing:.12em;color:#9fd8e2}
+.ecosystem-image-tag b{color:#fff;font-size:13px}
+.ecosystem-note{display:flex;align-items:flex-start;gap:10px;margin-top:22px;max-width:420px;color:#7e96b1;font-size:12.5px;line-height:1.7}
+.ecosystem-note svg{flex:none;color:var(--cyan);margin-top:2px}
+.ecosystem-flow{position:relative}
+.ecosystem-flow:before{content:"";position:absolute;left:89px;top:46px;bottom:46px;width:1px;background:linear-gradient(180deg,var(--cyan),#3f7cff 55%,rgba(83,219,224,.12))}
+.eco-stage{display:grid;grid-template-columns:44px 52px 1fr;gap:0 20px;align-items:center;padding:21px 0;border-bottom:1px solid rgba(120,160,210,.15)}
+.eco-stage:last-child{border-bottom:0}
+.eco-stage-no{font:11px var(--mono);color:#7090b2;letter-spacing:.12em}
+.eco-stage-icon{position:relative;z-index:1;width:52px;height:52px;display:grid;place-items:center;background:#0a2148;border:1px solid rgba(83,219,224,.42);color:var(--cyan);transition:background-color .3s,color .3s,box-shadow .3s,transform .3s}
+.eco-stage:hover .eco-stage-icon{background:var(--cyan);color:#061a38;box-shadow:0 0 26px rgba(83,219,224,.45);transform:translateY(-2px)}
+.eco-stage-copy strong{display:block;color:#fff;font-size:17px;letter-spacing:.01em;margin-bottom:5px}
+.eco-stage-copy p{margin:0;color:#8fa8c1;font-size:13.5px;line-height:1.65;max-width:470px}
+
+/* --- Coverage: selectable UAE service territory map with location detail panel --- */
+.coverage-copy .eyebrow{color:#9eb1c9}
+.location-list{display:flex;flex-direction:column;gap:8px;margin-top:34px;max-width:440px}
+.location-list button{display:grid;grid-template-columns:16px 1fr auto;align-items:center;gap:11px;background:transparent;border:1px solid rgba(120,160,210,.24);color:#c8d7e6;padding:11px 14px;font:12px var(--mono);letter-spacing:.03em;cursor:pointer;text-align:left;transition:border-color .25s,background-color .25s,transform .25s}
+.location-list button svg{color:var(--cyan)}
+.location-list button em{font-style:normal;color:#5f7c9c;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase}
+.location-list button:hover{border-color:rgba(83,219,224,.6);transform:translateX(4px)}
+.location-list button.active{border-color:var(--cyan);background:rgba(83,219,224,.08);color:#fff}
+.location-list button.active em{color:var(--cyan)}
+.territory-map{position:relative;display:flex;flex-direction:column;align-items:center}
+.territory-map>svg{width:min(100%,560px);overflow:visible;filter:drop-shadow(0 0 24px rgba(83,219,224,.1))}
+.map-coast{fill:none;stroke:rgba(125,178,228,.42);stroke-width:1.4;stroke-dasharray:2 5}
+.coast-east{stroke:rgba(125,178,228,.25)}
+.map-cross{stroke:rgba(83,219,224,.35);stroke-width:1}
+.map-route{fill:none;stroke:url(#routeLine);stroke-width:1.3;stroke-dasharray:6 6;animation:route-flow 6s linear infinite}
+.map-node{cursor:pointer;outline:none}
+.map-node .node-dot{fill:var(--cyan);stroke:#061a38;stroke-width:3;filter:drop-shadow(0 0 6px var(--cyan));transition:fill .25s}
+.map-node .node-ring{fill:none;stroke:rgba(83,219,224,.4);stroke-width:1;transition:stroke .25s}
+.map-node:hover .node-dot,.map-node:focus-visible .node-dot{fill:#fff}
+.map-node.active .node-dot{fill:#fff}
+.map-node.active .node-ring{stroke:var(--cyan);stroke-width:1.6;animation:node-ring-live 2.2s ease-in-out infinite}
+.map-node.hq .node-ring{animation:node-ring-live 2.8s ease-in-out infinite}
+.map-node-label{fill:#8fa8c1;font-family:var(--mono);font-size:9.5px;letter-spacing:.08em}
+.map-node.active .map-node-label{fill:#fff}
+.map-coord{fill:#557193;font-family:var(--mono);font-size:9px;letter-spacing:.14em}
+.location-panel{width:min(100%,560px);margin-top:16px;background:rgba(7,24,48,.92);border:1px solid rgba(83,219,224,.3);padding:22px 24px;animation:panel-in .45s ease both}
+.location-role{display:block;font:9.5px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);margin-bottom:5px}
+.location-panel h3{margin:0 0 12px;color:#fff;font-size:21px}
+.location-sectors{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.location-sectors span{font:9.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#bfe9ee;border:1px solid rgba(83,219,224,.35);padding:4px 8px}
+.location-panel p{margin:0 0 12px;color:#9db3c9;font-size:13px;line-height:1.7}
+.location-panel ul{display:flex;flex-wrap:wrap;gap:10px 26px;margin:0 0 15px;padding:0;list-style:none}
+.location-panel li{display:flex;align-items:center;gap:7px;color:#d5e3f0;font-size:12.5px}
+.location-panel li svg{flex:none;color:var(--cyan)}
+.location-panel .panel-link{color:var(--cyan);background:none;border:0;padding:0;cursor:pointer}
+@keyframes node-ring-live{50%{opacity:.2}}
+@keyframes panel-in{from{opacity:0;transform:translateY(14px)}}
+@media(max-width:900px){
+.ecosystem{padding:92px 0}
+.ecosystem-layout{grid-template-columns:1fr;gap:48px}
+.ecosystem-intro{position:static}
+.ecosystem-image{max-width:100%}
+.territory-map{min-height:0;flex-direction:column}
+.location-panel{position:static;width:100%;margin-top:16px;backdrop-filter:none}
+}
+@media(max-width:520px){
+.ecosystem{padding:76px 0}
+.ecosystem-lead{font-size:14.5px}
+.eco-stage{grid-template-columns:32px 46px 1fr;gap:0 15px;padding:16px 0}
+.eco-stage-icon{width:46px;height:46px}
+.ecosystem-flow:before{left:70px;top:39px;bottom:39px}
+.eco-stage-copy strong{font-size:15.5px}
+.eco-stage-copy p{font-size:12.5px}
+.ecosystem-image img{height:190px}
+.location-list button{font-size:11px;padding:10px 12px}
+.map-node-label{display:none}
+}
+
+/* --- Three.js globe stage --- */
+.globe-stage{position:relative;width:100%;max-width:540px;aspect-ratio:1/1;margin:0 auto}
+.coverage-copy,.territory-map{min-width:0}
+.globe-stage canvas{position:relative;z-index:1;cursor:grab;touch-action:none}
+.globe-stage canvas:active{cursor:grabbing}
+.globe-halo-bg{position:absolute;inset:4%;z-index:0;border-radius:50%;background:radial-gradient(circle,rgba(83,219,224,.15),rgba(35,77,191,.08) 48%,transparent 70%);filter:blur(8px)}
+.globe-labels{position:absolute;inset:0;z-index:2;pointer-events:none}
+.globe-node-label{position:absolute;top:0;left:0;pointer-events:auto;background:rgba(7,24,48,.85);border:1px solid rgba(83,219,224,.35);color:#bfe9ee;font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:4px 8px;cursor:pointer;white-space:nowrap;backdrop-filter:blur(4px);transition:opacity .2s,border-color .2s,color .2s,background-color .2s}
+.globe-node-label:hover{border-color:var(--cyan);color:#fff}
+.globe-node-label.selected{border-color:var(--cyan);color:#fff;background:rgba(83,219,224,.15)}
+.globe-hint{position:absolute;left:50%;bottom:-8px;transform:translateX(-50%);z-index:2;font:9.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#557193;white-space:nowrap}
+
+/* --- Hero: signature wave rebuilt in pure theme colours (no reference image) --- */
+.hero-art:before{display:none}
+.hero-wave{position:absolute;inset:auto -6% -4% 18%;height:58%;z-index:0;mix-blend-mode:screen;pointer-events:none;animation:wave-drift 14s ease-in-out infinite alternate}
+.hero-wave svg{width:100%;height:100%;display:block}
+.wave-line{fill:none;stroke-linecap:round}
+.wl-1{stroke:#234dbf;stroke-width:100;opacity:.5;filter:blur(30px)}
+.wl-2{stroke:#155cff;stroke-width:64;opacity:.5;filter:blur(20px)}
+.wl-3{stroke:#46dce5;stroke-width:32;opacity:.55;filter:blur(11px)}
+.wl-4{stroke:#7ee9f2;stroke-width:10;opacity:.55;filter:blur(4px)}
+.wl-5{stroke:#3f7cff;stroke-width:46;opacity:.38;filter:blur(24px)}
+@media(max-width:520px){.hero-wave{inset:auto -30% 2% -10%;height:42%}}
+@media(max-width:900px){.hero-crosshair,.hero-coordinates{display:none}}

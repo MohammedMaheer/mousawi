@@ -1,32 +1,33 @@
-# Almousawi Trading Co. LLC Homepage
+# Almousawi Trading Co. LLC — Homepage
 
 ## Original problem statement
-Design and build a premium, innovative, client-facing homepage for Almousawi Trading Co. LLC, established 1974, a UAE-based engineering and industrial solutions company. The homepage must feel high-end, technically sophisticated, trustworthy, established, engineering-focused, and visually memorable, with the Almousawi logo/eagle motif, royal/electric blue and cyan visual language, custom engineering hero, heritage, industries, capabilities, ecosystem, projects, partners, contact CTA, footer, responsive behavior, and restrained premium motion.
+Premium, innovative, client-facing homepage for Almousawi Trading Co. LLC (est. 1974, UAE engineering/industrial solutions). Royal blue/cyan/white/navy identity, custom hero, heritage, industries, solutions, engineering ecosystem, why-us, projects, partners sections, working contact form. Must not look AI-generated or template-based.
 
-## Architecture decisions
-- React single-page marketing site with anchored sections and reusable interaction patterns.
-- FastAPI `/api/contact` endpoint persists enquiries in MongoDB using the existing environment configuration.
-- External image URLs are used for selected industrial project imagery and the two provided brand assets are used directly.
-- CSS motion layer includes reduced-motion support, blueprint grid movement, wave drift, node pulses, entrance reveals, and interaction transitions.
+## Architecture
+- React 19 + CRA frontend (`/app/frontend`), FastAPI backend (`/app/backend`), MongoDB via MONGO_URL.
+- `App.js` — single-page structure (header, hero, heritage, industries, capabilities, ecosystem, projects, partners, CTA, coverage, footer, modals).
+- `Globe.js` — Three.js interactive coverage globe (dot-matrix sphere, graticule, HQ→territory arcs with travelling pulses, drag-rotate, raycast node picking, HTML label overlay synced to selection).
+- CSS layered files: AppFixed, AppEnhancements, AppPolish, AppUltra, AppGlobe, AppFilm, AppCaseFix, AppTerritory (latest, ecosystem + globe + hero wave overrides).
+- Backend: `POST /api/contact` (save enquiry), `GET /api/contact`, `GET /api/` health.
 
-## Implemented
-- Premium sticky navigation with mobile menu and Partners/Careers anchors.
-- Full logo treatment using the uploaded Almousawi logo and uploaded blue wave visual.
-- Animated engineering hero with blueprint grid, energy wave composition, coordinates, trust metrics, and high-contrast CTAs.
-- Heritage timeline, industry rail, interactive capability tabs, seven-stage engineering ecosystem visualization, projects, partners, CTA, and detailed footer.
-- Contact modal with valid/invalid submission handling, success state, error toast, and responsive form.
-- Responsive layout verified at desktop and 390px mobile widths with no horizontal overflow.
-- Larger typography scale across navigation, body copy, industry cards, capability details, project cards, and footer.
-- Verified client showcase using official marks sourced from Almousawi's public client page, with category labels and hover color reveal.
-- Three immersive case-study modals with sourced imagery, outcomes, systems involved, close controls, and contact CTA handoff.
-- Current-site relationship panels for ADNOC, TotalEnergies, Borouge, Dubai Airports, and Petrofac with category context, support explanation, and official source links.
-- Scroll-linked case-study stage diagrams with desktop and mobile scroll depth, animated rings, stage activation, and engineering lifecycle storytelling.
-- Premium density/motion pass with tighter section rhythm, technical overlays, 3D perspective hover motion, orbit animations, animated grids, project affordances, and layered section surfaces.
-- Animated UAE-to-global coverage section with sector switching for Oil & Gas, Marine, Power, and Industrial, plus globe routes, HQ node, global supplier network label, and current-site service context.
-- Hero film-style engineering layer built as a reliable CSS motion treatment over sourced industrial imagery after the external MP4 host returned 403; no broken media requests remain.
+## User personas
+- Industrial client decision-makers (energy, marine, infrastructure) in the UAE evaluating an engineering partner.
 
-## Prioritized backlog
-- P0: None.
-- P1: Connect enquiry notifications to the company email workflow.
-- P1: Replace prototype project imagery and partner wordmarks with approved company assets.
-- P2: Add dedicated URL-based case-study detail pages behind the current immersive modal views.
+## Implemented (latest first)
+- 2026-09-30: Three.js 3D globe in Coverage section — verified locations (Abu Dhabi HQ, Ruwais/Al Dhafra, Dubai, Sharjah & N. Emirates, Offshore/Arabian Gulf) plotted from real lat/lng with cartographic spread amplification for readability; selectable nodes (globe click, label click, or list) sync with a capability detail panel that links into case-study modals; drag-to-rotate + auto-rotate; node labels hide on far side.
+- 2026-09-30: Ecosystem section redesigned — 7 stages (Client requirement → Lifecycle support) with consistent Lucide line icons, descriptions, connected glowing spine, control-room image card, sticky intro; dense premium layout.
+- 2026-09-30: Hero reference wave image replaced with pure SVG/CSS wave strokes in brand colours (#234dbf/#155cff/#46dce5/#3f7cff) — no embedded theme picture.
+- 2026-09-30: Mobile fixes — hero crosshair/coordinates hidden ≤900px; coverage grid min-content overflow fixed (min-width:0 + width:100%/max-width on globe stage).
+- Earlier: full homepage (hero film layer fallback, capability tabs, case-study scroll-story modals, partner logo panels, contact form with success state + MongoDB save, real client logos).
+
+## Known notes
+- Hero video MP4 was never used (external URLs 403); CSS/SVG film + wave layer is the intended visual.
+- Node positions on globe are geographically real but spacing-amplified for legibility.
+
+## Backlog
+- P1: Premium hero video layer (needs a reliable hosted industrial MP4 or uploaded asset).
+- P2: Consolidate layered CSS files; split App.js into components.
+- P2: Real case-study content/images from the client.
+
+## Test credentials
+None — public site, contact form is unauthenticated.
