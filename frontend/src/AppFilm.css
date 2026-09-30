@@ -1,2 +1,0 @@
-.hero-film{background:linear-gradient(115deg,rgba(18,86,182,.28),transparent 55%),url("https://images.unsplash.com/photo-1611581372056-30cf28a7bd2e?crop=entropy&cs=srgb&fm=jpg&q=70") center/cover;animation:film-drift 18s ease-in-out infinite alternate}
-@keyframes film-drift{to{transform:scale(1.06) translate3d(-1%, -1%, 0);filter:saturate(.7) contrast(1.2)}}
